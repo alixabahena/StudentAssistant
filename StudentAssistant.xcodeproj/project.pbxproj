@@ -19,6 +19,8 @@
 		55BBB3901FBF663300841000 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBB38F1FBF663300841000 /* CourseListViewController.swift */; };
 		55BBB3921FBF670A00841000 /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBB3911FBF670A00841000 /* AddCourseViewController.swift */; };
 		55BBB3941FBF673900841000 /* AddAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBB3931FBF673900841000 /* AddAssignmentViewController.swift */; };
+		55BBB3961FC1D01E00841000 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBB3951FC1D01E00841000 /* ItemCell.swift */; };
+		55BBB3981FC1D34900841000 /* CourseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBB3971FC1D34900841000 /* CourseStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		55BBB38F1FBF663300841000 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		55BBB3911FBF670A00841000 /* AddCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
 		55BBB3931FBF673900841000 /* AddAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentViewController.swift; sourceTree = "<group>"; };
+		55BBB3951FC1D01E00841000 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		55BBB3971FC1D34900841000 /* CourseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				55BBB38F1FBF663300841000 /* CourseListViewController.swift */,
 				55BBB3911FBF670A00841000 /* AddCourseViewController.swift */,
 				55BBB3931FBF673900841000 /* AddAssignmentViewController.swift */,
+				55BBB3951FC1D01E00841000 /* ItemCell.swift */,
+				55BBB3971FC1D34900841000 /* CourseStore.swift */,
 			);
 			path = StudentAssistant;
 			sourceTree = "<group>";
@@ -274,6 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55BBB3981FC1D34900841000 /* CourseStore.swift in Sources */,
+				55BBB3961FC1D01E00841000 /* ItemCell.swift in Sources */,
 				55BBB38A1FBF648900841000 /* Assignment.swift in Sources */,
 				55BBB3921FBF670A00841000 /* AddCourseViewController.swift in Sources */,
 				55BBB3901FBF663300841000 /* CourseListViewController.swift in Sources */,

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bJe-fY-2D5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bJe-fY-2D5" customClass="ItemCell" customModule="StudentAssistant" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bJe-fY-2D5" id="UgT-PD-CzK">
@@ -50,6 +50,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="courseNameLabel" destination="prq-aw-WjY" id="6vO-bC-IhH"/>
+                                    <outlet property="courseNumLable" destination="DqX-3w-BrX" id="dyD-UR-Yhr"/>
                                     <segue destination="d8E-25-9fV" kind="show" id="YpC-ob-qsg"/>
                                 </connections>
                             </tableViewCell>
@@ -236,6 +238,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="15N-rG-VRG"/>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="nM1-vk-m6D" id="CoG-i6-iBd"/>
+                        <outlet property="cancelButton" destination="pCY-Lt-Oo8" id="4pS-f3-4ep"/>
+                        <outlet property="courseDateTextField" destination="7jX-uT-M5C" id="Loq-w4-ry5"/>
+                        <outlet property="courseNameTextField" destination="v6D-dw-QaU" id="ddT-97-0FH"/>
+                        <outlet property="courseNumTextField" destination="pN5-YN-5vx" id="8pe-hG-QFj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5P-Ms-GaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

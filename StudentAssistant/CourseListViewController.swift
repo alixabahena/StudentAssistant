@@ -9,4 +9,6 @@
 import UIKit
 
 class CourseListViewController: UITableViewController{
+    var courseStore: CourseStore!
+    
 }

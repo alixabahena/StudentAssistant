@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //create courseStore
+        let courseStore = CourseStore()
+        
+        //set rootviewcontroller
+        let navController = window!.rootViewController as! UINavigationController
+        let courseListController = navController.topViewController as! CourseListViewController
+        courseListController.courseStore = courseStore
+        
         return true
     }
 
