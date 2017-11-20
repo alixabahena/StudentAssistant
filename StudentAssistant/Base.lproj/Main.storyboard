@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bJe-fY-2D5" customClass="ItemCell" customModule="StudentAssistant" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="bJe-fY-2D5" customClass="ItemCell" customModule="StudentAssistant" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bJe-fY-2D5" id="UgT-PD-CzK">
@@ -49,6 +49,7 @@
                                         <constraint firstItem="DqX-3w-BrX" firstAttribute="leading" secondItem="UgT-PD-CzK" secondAttribute="leading" constant="8" id="yE3-2C-FOQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="ItemCell"/>
                                 <connections>
                                     <outlet property="courseNameLabel" destination="prq-aw-WjY" id="6vO-bC-IhH"/>
                                     <outlet property="courseNumLable" destination="DqX-3w-BrX" id="dyD-UR-Yhr"/>
@@ -138,7 +139,7 @@
         <!--Add Course View Controller-->
         <scene sceneID="Qnc-iP-m0K">
             <objects>
-                <viewController id="9cE-c0-C2u" customClass="AddCourseViewController" customModule="StudentAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCourseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9cE-c0-C2u" customClass="AddCourseViewController" customModule="StudentAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9YL-Oy-RtQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,6 +195,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="dateFieldEditing:" destination="9cE-c0-C2u" eventType="editingDidBegin" id="UhJ-VE-BBU"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -211,6 +215,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="addButtonClicked:" destination="9cE-c0-C2u" eventType="touchUpInside" id="MvZ-c3-vQE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCY-Lt-Oo8">
                                                 <rect key="frame" x="187.5" y="0.0" width="167.5" height="33"/>
@@ -223,6 +230,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelButtonClicked:" destination="9cE-c0-C2u" eventType="touchUpInside" id="J7B-ED-2Wt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
