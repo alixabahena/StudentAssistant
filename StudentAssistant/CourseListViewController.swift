@@ -50,7 +50,9 @@ class CourseListViewController: UITableViewController{
         //tableView.scrollIndicatorInsets = insets
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 65
+        tableView.rowHeight = 45
+        tableView.estimatedRowHeight = 45
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
