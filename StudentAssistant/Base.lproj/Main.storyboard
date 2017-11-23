@@ -27,25 +27,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Course Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqX-3w-BrX">
-                                            <rect key="frame" x="8" y="8" width="121" height="21"/>
+                                            <rect key="frame" x="8" y="11.5" width="121" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prq-aw-WjY">
-                                            <rect key="frame" x="137" y="8" width="102" height="21"/>
+                                            <rect key="frame" x="137" y="11.5" width="102" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="DqX-3w-BrX" secondAttribute="bottom" constant="14.5" id="35V-gc-1h9"/>
-                                        <constraint firstAttribute="bottom" secondItem="prq-aw-WjY" secondAttribute="bottom" constant="14.5" id="CfN-ht-gaj"/>
+                                        <constraint firstItem="prq-aw-WjY" firstAttribute="centerY" secondItem="UgT-PD-CzK" secondAttribute="centerY" id="2I9-tk-Xlt"/>
                                         <constraint firstItem="prq-aw-WjY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DqX-3w-BrX" secondAttribute="trailing" constant="8" symbolic="YES" id="L6T-2H-lIK"/>
+                                        <constraint firstItem="DqX-3w-BrX" firstAttribute="centerY" secondItem="UgT-PD-CzK" secondAttribute="centerY" id="PZw-hP-qsp"/>
                                         <constraint firstAttribute="trailing" secondItem="prq-aw-WjY" secondAttribute="trailing" constant="136" id="Yd1-2G-yTF"/>
-                                        <constraint firstItem="prq-aw-WjY" firstAttribute="top" secondItem="UgT-PD-CzK" secondAttribute="top" constant="8" id="b19-eP-F3H"/>
-                                        <constraint firstItem="DqX-3w-BrX" firstAttribute="top" secondItem="UgT-PD-CzK" secondAttribute="top" constant="8" id="qHI-jx-6Lw"/>
                                         <constraint firstItem="DqX-3w-BrX" firstAttribute="leading" secondItem="UgT-PD-CzK" secondAttribute="leading" constant="8" id="yE3-2C-FOQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
