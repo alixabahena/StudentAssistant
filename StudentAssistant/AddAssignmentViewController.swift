@@ -60,7 +60,7 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         // Store the image in the ImageStore for the item's key
-        imageStore.setImage(image, forKey: item.itemKey)
+        imageStore.setImage(image, forKey: item.pictureKey)
         
         // Put that image onto the screen in our image view
         imageView.image = nil
