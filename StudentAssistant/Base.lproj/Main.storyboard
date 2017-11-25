@@ -13,7 +13,7 @@
         <!--Course List-->
         <scene sceneID="qJa-bv-iu2">
             <objects>
-                <tableViewController id="l3v-Ud-uao" customClass="CourseListViewController" customModule="StudentAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CourseListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l3v-Ud-uao" customClass="CourseListViewController" customModule="StudentAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zbU-fU-GHd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
                                 <connections>
                                     <outlet property="courseNameLabel" destination="prq-aw-WjY" id="6vO-bC-IhH"/>
                                     <outlet property="courseNumLable" destination="DqX-3w-BrX" id="dyD-UR-Yhr"/>
-                                    <segue destination="d8E-25-9fV" kind="show" id="YpC-ob-qsg"/>
+                                    <segue destination="d8E-25-9fV" kind="show" identifier="CourseView" id="YpC-ob-qsg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -66,7 +66,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="m6L-5M-qRz"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z7O-KP-Apm">
                             <connections>
-                                <segue destination="9cE-c0-C2u" kind="show" id="2n1-rA-iLh"/>
+                                <segue destination="9cE-c0-C2u" kind="show" identifier="AddCourse" id="2n1-rA-iLh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -364,7 +364,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="l3v-Ud-uao" kind="relationship" relationship="rootViewController" id="K2h-Ex-sTZ"/>
+                        <segue destination="l3v-Ud-uao" kind="relationship" relationship="rootViewController" id="Hdf-JH-Co0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEJ-ls-Axf" userLabel="First Responder" sceneMemberID="firstResponder"/>

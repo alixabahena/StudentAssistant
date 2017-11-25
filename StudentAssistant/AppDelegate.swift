@@ -23,9 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //set rootviewcontroller
         let navController = window!.rootViewController as! UINavigationController
         let courseListController = navController.topViewController as! CourseListViewController
-        let addCourseViewController = AddCourseViewController(nibName: "AddCourseViewController", bundle: nil)
         courseListController.courseStore = courseStore
-        addCourseViewController.courseStore = courseStore
         return true
     }
 

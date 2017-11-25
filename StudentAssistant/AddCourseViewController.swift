@@ -28,13 +28,14 @@ class AddCourseViewController: UIViewController, UITextFieldDelegate, UINavigati
         let courseNum: String = courseNumTextField.text!
         let courseName: String = courseNameTextField.text!
         let courseDate: String = courseDateTextField.text!
+       
+    
+       let newCourse = Course(name: courseName, courseNum: courseNum, date: courseDate)
+       courseStore.allCourses.append(newCourse)
         
-       //let newCourse = Course(name: courseName, courseNum: courseNum, date: courseDate)
-       //courseStore.allCourses.append(newCourse)
-        
-        course.name = courseName
-        course.courseNum = courseNum
-        course.date = courseDate
+        //course.name = courseName
+        //course.courseNum = courseNum
+        //course.date = courseDate
         
         courseNumTextField.text = ""
         courseNameTextField.text = ""
@@ -46,6 +47,10 @@ class AddCourseViewController: UIViewController, UITextFieldDelegate, UINavigati
        
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     
     
 }

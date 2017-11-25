@@ -42,6 +42,7 @@ class CourseListViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Get the height of the status bar
         //let statusBarHeight = UIApplication.shared.statusBarFrame.height
         //let insets = UIEdgeInsets(top: statusBarHeight+1, left: 0, bottom: 0, right: 0)
@@ -57,4 +58,26 @@ class CourseListViewController: UITableViewController{
         
         tableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "AddCourse")
+        {
+        let newVC:AddCourseViewController = segue.destination as! AddCourseViewController
+        newVC.courseStore = courseStore
+        }
+        
+        if (segue.identifier == "CourseView")
+        {
+            let newVC:CourseViewController = segue.destination as! CourseViewController
+            
+            // Figure out which row was just tapped
+            if let row = tableView.indexPathForSelectedRow?.row {
+                
+                // Get the item associated with this row and pass it along
+                let course = courseStore.allCourses[row]
+                newVC.course = course
+                newVC.courseStore = courseStore
+        }
+    }
+}
 }

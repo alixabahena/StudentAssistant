@@ -11,18 +11,8 @@ import Foundation
 class CourseStore {
     
     var allCourses = [Course]()
-    
-    @discardableResult func createItem() -> Course {
-        let newItem = Course(random: true)
-        allCourses.append(newItem)
-        return newItem
-    }
-    
-    init() {
-        for _ in 0..<5 {
-            createItem()
-        }
-    }
+
+
  
     func removeCourse(_ item: Course) {
         if let index = allCourses.index(of: item) {
