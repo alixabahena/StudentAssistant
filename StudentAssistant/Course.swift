@@ -12,15 +12,13 @@ class Course: NSObject {
     var name: String
     var courseNum: String
     var date: String
+    var assignmentArray = [Assignment]()
     
-   init(name: String, courseNum: String, date: String) {
+    init(name: String, courseNum: String, date: String, assignmentArray: [Assignment]) {
         self.name = name
         self.courseNum = courseNum
         self.date = date
+        self.assignmentArray = assignmentArray
         super.init()
     }
-
-    //creates an array of assignments to store in each instance of course
-    var assignmentArray = [Assignment]()
-    
 }

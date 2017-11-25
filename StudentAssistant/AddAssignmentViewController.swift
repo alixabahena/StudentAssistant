@@ -15,20 +15,67 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
     @IBOutlet var imageView: UIImageView!
     var imageStore: ImageStore!
     var datePicker : UIDatePicker!
-    var item: Assignment!
+    var course: Course!
+    var courseStore: CourseStore!
+    var localDate: Date!
+    var localRow: Int = 0
+    
+    
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter
+        
+    }()
+    
+    
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         assignmentTextField.text = ""
         dueDateTextField.text = ""
+        imageView.image = nil
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         
+        //pull information the user entered and make it locally availabl
+        let assignmentName: String = assignmentTextField.text!
+        let dueDate: Date = datePicker.date
+        
+        //assign locally entered info into the assignment in course store in the right course
+        let newAssignment = Assignment(name: assignmentName, date: dueDate)
+        course.assignmentArray.append(newAssignment)
+        imageStore.setImage(imageView.image!, forKey: course.assignmentArray[localRow].pictureKey)
+        //clear the text after add button is clicked
+        assignmentTextField.text = ""
+        dueDateTextField.text = ""
+        imageView.image = nil
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+       
+        if course.assignmentArray.count != 0 {
+            assignmentTextField.text = course.assignmentArray[localRow].name
+            dueDateTextField.text = dateFormatter.string(from: course.assignmentArray[localRow].date)
+            
+            
+        let key = course.assignmentArray[localRow].pictureKey
+        
+        // If there is an associated image with the item ...
+        if let imageToDisplay = imageStore.image(forKey: key) {
+            // ... display it on the image view
+            imageView.image = imageToDisplay
+        }
+        }
     }
     
     @IBAction func takePicture(_ sender: UIBarButtonItem) {
@@ -60,10 +107,12 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         // Store the image in the ImageStore for the item's key
-        imageStore.setImage(image, forKey: item.pictureKey)
         
+        if course.assignmentArray.count != 0 {
+        imageStore.setImage(image, forKey: course.assignmentArray[localRow].pictureKey)
+        }
         // Put that image onto the screen in our image view
-        imageView.image = nil
+        imageView.image = image
         
         // Take image picker off the screen -
         // you must call this dismiss method
@@ -100,6 +149,9 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         dateFormatter1.timeStyle = .short
         dueDateTextField.text = dateFormatter1.string(from: datePicker.date)
         dueDateTextField.resignFirstResponder()
+        
+        //assign the date
+        localDate = datePicker.date
     }
     @objc func cancelClick() {
         dueDateTextField.resignFirstResponder()

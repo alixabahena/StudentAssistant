@@ -82,14 +82,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" id="iwv-tV-hTd">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" id="iwv-tV-hTd" customClass="CourseCell" customModule="StudentAssistant" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iwv-tV-hTd" id="lYQ-H7-h3r">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnO-Ko-hm3">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Assignment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnO-Ko-hm3">
                                             <rect key="frame" x="8" y="8" width="91" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -104,14 +104,20 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="6B4-mP-HEX" secondAttribute="bottom" constant="14.5" id="Lmm-mV-8I1"/>
-                                        <constraint firstAttribute="trailing" secondItem="6B4-mP-HEX" secondAttribute="trailing" constant="182" id="Pr3-W3-oHX"/>
+                                        <constraint firstItem="6B4-mP-HEX" firstAttribute="leading" secondItem="KnO-Ko-hm3" secondAttribute="trailing" constant="22" id="NXs-E9-TdY"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6B4-mP-HEX" secondAttribute="trailing" constant="20" symbolic="YES" id="Pr3-W3-oHX"/>
                                         <constraint firstItem="6B4-mP-HEX" firstAttribute="top" secondItem="lYQ-H7-h3r" secondAttribute="top" constant="8" id="SCs-Lx-rir"/>
-                                        <constraint firstItem="6B4-mP-HEX" firstAttribute="leading" secondItem="KnO-Ko-hm3" secondAttribute="trailing" constant="22" id="cNR-3U-rWe"/>
+                                        <constraint firstItem="6B4-mP-HEX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KnO-Ko-hm3" secondAttribute="trailing" constant="8" symbolic="YES" id="cNR-3U-rWe"/>
                                         <constraint firstItem="KnO-Ko-hm3" firstAttribute="leading" secondItem="lYQ-H7-h3r" secondAttribute="leading" constant="8" id="gNF-fj-dUf"/>
                                         <constraint firstItem="KnO-Ko-hm3" firstAttribute="top" secondItem="lYQ-H7-h3r" secondAttribute="top" constant="8" id="jha-8w-u3k"/>
                                         <constraint firstAttribute="bottom" secondItem="KnO-Ko-hm3" secondAttribute="bottom" constant="14.5" id="rOb-n3-M7K"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="assignmentDueDateLabel" destination="6B4-mP-HEX" id="gVk-B3-aFb"/>
+                                    <outlet property="assignmentLabel" destination="KnO-Ko-hm3" id="l1u-6h-L1i"/>
+                                    <segue destination="DzB-A8-Tjp" kind="show" identifier="editAssignment" id="c10-7P-ECB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -123,7 +129,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="EeM-hV-str">
                                 <connections>
-                                    <segue destination="DzB-A8-Tjp" kind="show" id="OCy-4C-FJt"/>
+                                    <segue destination="DzB-A8-Tjp" kind="show" identifier="addAssignmentSegue" id="OCy-4C-FJt"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="edit" id="eIP-TC-xif"/>
@@ -306,7 +312,7 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rg3-Pa-YOQ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rg3-Pa-YOQ">
                                         <rect key="frame" x="0.0" y="80" width="355" height="419"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8LI-lu-6I1">
@@ -388,4 +394,7 @@
             <point key="canvasLocation" x="545" y="39"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="c10-7P-ECB"/>
+    </inferredMetricsTieBreakers>
 </document>

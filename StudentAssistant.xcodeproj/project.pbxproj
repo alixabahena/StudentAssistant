@@ -22,6 +22,7 @@
 		55BBB3941FBF673900841000 /* AddAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBB3931FBF673900841000 /* AddAssignmentViewController.swift */; };
 		55BBB3961FC1D01E00841000 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBB3951FC1D01E00841000 /* ItemCell.swift */; };
 		55BBB3981FC1D34900841000 /* CourseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBB3971FC1D34900841000 /* CourseStore.swift */; };
+		F09CC5451FC9FC58003AD47A /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CC5441FC9FC58003AD47A /* CourseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		55BBB3931FBF673900841000 /* AddAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentViewController.swift; sourceTree = "<group>"; };
 		55BBB3951FC1D01E00841000 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		55BBB3971FC1D34900841000 /* CourseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseStore.swift; sourceTree = "<group>"; };
+		F09CC5441FC9FC58003AD47A /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				55BBB3951FC1D01E00841000 /* ItemCell.swift */,
 				55BBB3971FC1D34900841000 /* CourseStore.swift */,
 				5555A0AD1FC9B38A00F59A98 /* ImageStore.swift */,
+				F09CC5441FC9FC58003AD47A /* CourseCell.swift */,
 			);
 			path = StudentAssistant;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				55BBB3981FC1D34900841000 /* CourseStore.swift in Sources */,
 				55BBB3961FC1D01E00841000 /* ItemCell.swift in Sources */,
 				55BBB38A1FBF648900841000 /* Assignment.swift in Sources */,
+				F09CC5451FC9FC58003AD47A /* CourseCell.swift in Sources */,
 				5555A0AE1FC9B38A00F59A98 /* ImageStore.swift in Sources */,
 				55BBB3921FBF670A00841000 /* AddCourseViewController.swift in Sources */,
 				55BBB3901FBF663300841000 /* CourseListViewController.swift in Sources */,

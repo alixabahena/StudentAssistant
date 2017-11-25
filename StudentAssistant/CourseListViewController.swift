@@ -10,7 +10,7 @@ import UIKit
 
 class CourseListViewController: UITableViewController{
     var courseStore: CourseStore!
-    
+    var imageStore: ImageStore!
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courseStore.allCourses.count
@@ -79,7 +79,10 @@ class CourseListViewController: UITableViewController{
                 let course = courseStore.allCourses[row]
                 newVC.course = course
                 newVC.courseStore = courseStore
+                newVC.imageStore = imageStore
         }
-    }
+        }
+        
+        
 }
 }

@@ -19,11 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //create courseStore
         let courseStore = CourseStore()
+        let imageStore = ImageStore()
         
         //set rootviewcontroller
         let navController = window!.rootViewController as! UINavigationController
         let courseListController = navController.topViewController as! CourseListViewController
         courseListController.courseStore = courseStore
+        courseListController.imageStore = imageStore
         return true
     }
 

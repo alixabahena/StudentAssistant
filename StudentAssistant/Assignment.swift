@@ -10,21 +10,13 @@ import UIKit
 
 class Assignment: NSObject {
     var name: String
-    var date: NSDate
+    var date: Date
     var pictureKey: String
     
-    init(name: String, date: NSDate) {
+    init(name: String, date: Date) {
         self.name = name
         self.date = date
         self.pictureKey = NSUUID().uuidString
         super.init()
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }

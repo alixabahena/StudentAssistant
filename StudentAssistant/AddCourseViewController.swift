@@ -17,6 +17,7 @@ class AddCourseViewController: UIViewController, UITextFieldDelegate, UINavigati
     @IBOutlet var cancelButton: UIButton!
     var courseStore: CourseStore!
     var course: Course!
+    var assignments = [Assignment]()
     
     @IBAction func cancelButtonClicked(_ sender: UIButton) {
         courseNumTextField.text = ""
@@ -30,9 +31,8 @@ class AddCourseViewController: UIViewController, UITextFieldDelegate, UINavigati
         let courseDate: String = courseDateTextField.text!
        
     
-       let newCourse = Course(name: courseName, courseNum: courseNum, date: courseDate)
-       courseStore.allCourses.append(newCourse)
-        
+        let newCourse = Course(name: courseName, courseNum: courseNum, date: courseDate, assignmentArray: assignments)
+        courseStore.allCourses.append(newCourse)
         courseNumTextField.text = ""
         courseNameTextField.text = ""
         courseDateTextField.text = ""
