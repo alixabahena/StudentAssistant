@@ -20,4 +20,7 @@ class Course: NSObject {
         super.init()
     }
 
+    //creates an array of assignments to store in each instance of course
+    var assignmentArray = [Assignment]()
+    
 }

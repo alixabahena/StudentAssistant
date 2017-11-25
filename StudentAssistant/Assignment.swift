@@ -19,4 +19,12 @@ class Assignment: NSObject {
         self.pictureKey = NSUUID().uuidString
         super.init()
     }
+    
+    
+    
+    
+    
+    
+    
+    
 }
