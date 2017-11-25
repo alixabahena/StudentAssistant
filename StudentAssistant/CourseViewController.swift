@@ -19,6 +19,8 @@ class CourseViewController: UITableViewController{
         }
     }
     
+    var senderID: Int = 0
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return course.assignmentArray.count
     }
@@ -80,6 +82,7 @@ class CourseViewController: UITableViewController{
             let newVC:AddAssignmentViewController = segue.destination as! AddAssignmentViewController
             
                 // Get the item associated with this row and pass it along
+            senderID = 1
                 newVC.course = course
                 newVC.courseStore = courseStore
                 newVC.imageStore = imageStore
@@ -93,9 +96,11 @@ class CourseViewController: UITableViewController{
             let newVC:AddAssignmentViewController = segue.destination as! AddAssignmentViewController
             
             // Get the item associated with this row and pass it along
+            senderID = 2
             newVC.course = course
             newVC.courseStore = courseStore
             newVC.imageStore = imageStore
+            newVC.senderID = senderID
             if let row = tableView.indexPathForSelectedRow?.row {
                 newVC.localRow = row
             }

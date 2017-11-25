@@ -19,6 +19,7 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
     var courseStore: CourseStore!
     var localDate: Date!
     var localRow: Int = 0
+    var senderID: Int = 0
     
     
     let dateFormatter: DateFormatter = {
@@ -38,19 +39,23 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         
-        //pull information the user entered and make it locally availabl
+        //pull information the user entered and make it locally available
         let assignmentName: String = assignmentTextField.text!
         let dueDate: Date = datePicker.date
         
         //assign locally entered info into the assignment in course store in the right course
         let newAssignment = Assignment(name: assignmentName, date: dueDate)
         course.assignmentArray.append(newAssignment)
+        
+        //if there is an image for the current assignment, show it
         if imageView.image != nil {
             imageStore.setImage(imageView.image!, forKey: course.assignmentArray[localRow].pictureKey)
         }
         //clear the text after add button is clicked
         assignmentTextField.text = ""
         dueDateTextField.text = ""
+        //must reset the values of these to nothing so that the next addition doesn't carry them
+        
         imageView.image = nil
         
     }
@@ -65,7 +70,7 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         super.viewWillAppear(animated)
         
        
-        if course.assignmentArray.count != 0 {
+        if senderID == 2 {
             assignmentTextField.text = course.assignmentArray[localRow].name
             dueDateTextField.text = dateFormatter.string(from: course.assignmentArray[localRow].date)
             
