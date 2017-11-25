@@ -90,27 +90,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Assignment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnO-Ko-hm3">
-                                            <rect key="frame" x="8" y="8" width="91" height="21"/>
+                                            <rect key="frame" x="8" y="11.5" width="91" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B4-mP-HEX">
-                                            <rect key="frame" x="121" y="8" width="72" height="21"/>
+                                            <rect key="frame" x="121" y="11.5" width="72" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="6B4-mP-HEX" secondAttribute="bottom" constant="14.5" id="Lmm-mV-8I1"/>
+                                        <constraint firstItem="KnO-Ko-hm3" firstAttribute="centerY" secondItem="lYQ-H7-h3r" secondAttribute="centerY" id="7s1-xK-TZD"/>
                                         <constraint firstItem="6B4-mP-HEX" firstAttribute="leading" secondItem="KnO-Ko-hm3" secondAttribute="trailing" constant="22" id="NXs-E9-TdY"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6B4-mP-HEX" secondAttribute="trailing" constant="20" symbolic="YES" id="Pr3-W3-oHX"/>
-                                        <constraint firstItem="6B4-mP-HEX" firstAttribute="top" secondItem="lYQ-H7-h3r" secondAttribute="top" constant="8" id="SCs-Lx-rir"/>
                                         <constraint firstItem="6B4-mP-HEX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KnO-Ko-hm3" secondAttribute="trailing" constant="8" symbolic="YES" id="cNR-3U-rWe"/>
+                                        <constraint firstItem="6B4-mP-HEX" firstAttribute="centerY" secondItem="lYQ-H7-h3r" secondAttribute="centerY" id="dhA-Td-Gns"/>
                                         <constraint firstItem="KnO-Ko-hm3" firstAttribute="leading" secondItem="lYQ-H7-h3r" secondAttribute="leading" constant="8" id="gNF-fj-dUf"/>
-                                        <constraint firstItem="KnO-Ko-hm3" firstAttribute="top" secondItem="lYQ-H7-h3r" secondAttribute="top" constant="8" id="jha-8w-u3k"/>
-                                        <constraint firstAttribute="bottom" secondItem="KnO-Ko-hm3" secondAttribute="bottom" constant="14.5" id="rOb-n3-M7K"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

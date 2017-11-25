@@ -45,7 +45,9 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         //assign locally entered info into the assignment in course store in the right course
         let newAssignment = Assignment(name: assignmentName, date: dueDate)
         course.assignmentArray.append(newAssignment)
-        imageStore.setImage(imageView.image!, forKey: course.assignmentArray[localRow].pictureKey)
+        if imageView.image != nil {
+            imageStore.setImage(imageView.image!, forKey: course.assignmentArray[localRow].pictureKey)
+        }
         //clear the text after add button is clicked
         assignmentTextField.text = ""
         dueDateTextField.text = ""
