@@ -322,6 +322,11 @@
                                                 <state key="normal" title="Add">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="addButtonPressed:" destination="DzB-A8-Tjp" eventType="touchUpInside" id="5sR-MB-Lpe"/>
                                                 </connections>
@@ -332,6 +337,11 @@
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="cancelButtonPressed:" destination="DzB-A8-Tjp" eventType="touchUpInside" id="cLw-HC-K6O"/>
                                                 </connections>
