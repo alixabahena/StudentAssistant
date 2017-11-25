@@ -361,7 +361,9 @@
                         <viewLayoutGuide key="safeArea" id="vyl-5I-0qz"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="ame-2w-qxE" id="uD0-5t-6s8"/>
                         <outlet property="assignmentTextField" destination="Zhu-WK-8ZK" id="DOy-Ox-mXb"/>
+                        <outlet property="cancelButton" destination="b6K-OV-9le" id="f2l-LF-b5V"/>
                         <outlet property="dueDateTextField" destination="vVu-bU-clo" id="lhu-Cr-ewD"/>
                         <outlet property="imageView" destination="rg3-Pa-YOQ" id="wRK-z0-wGg"/>
                     </connections>

@@ -37,6 +37,8 @@ class AddCourseViewController: UIViewController, UITextFieldDelegate, UINavigati
         courseNameTextField.text = ""
         courseDateTextField.text = ""
         
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
     @IBAction func dateFieldEditing(_ sender: UITextField) {

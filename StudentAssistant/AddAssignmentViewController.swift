@@ -13,6 +13,9 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
     @IBOutlet var assignmentTextField: UITextField!
     @IBOutlet var dueDateTextField: UITextField!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var addButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
+    
     var imageStore: ImageStore!
     var datePicker : UIDatePicker!
     var course: Course!
@@ -57,6 +60,8 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         //must reset the values of these to nothing so that the next addition doesn't carry them
         
         imageView.image = nil
+        self.navigationController?.popViewController(animated: true)
+
         
     }
     
@@ -71,8 +76,13 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         
        
         if senderID == 2 {
+            addButton.isHidden = true
+            cancelButton.isHidden = true
+            
             assignmentTextField.text = course.assignmentArray[localRow].name
             dueDateTextField.text = dateFormatter.string(from: course.assignmentArray[localRow].date)
+            
+            
             
             
         let key = course.assignmentArray[localRow].pictureKey
