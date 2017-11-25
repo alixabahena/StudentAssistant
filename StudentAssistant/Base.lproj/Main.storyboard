@@ -268,7 +268,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5bl-bx-Nsy">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5bl-bx-Nsy">
                                 <rect key="frame" x="10" y="74" width="355" height="593"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3DM-Cu-or1">
@@ -291,7 +291,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="38v-of-Sf7">
                                         <rect key="frame" x="0.0" y="40" width="355" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1a-JD-P5M">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1a-JD-P5M">
                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -302,6 +302,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="DzB-A8-Tjp" id="zKX-0I-oWU"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -317,6 +320,9 @@
                                                 <state key="normal" title="Add">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="addButtonPressed:" destination="DzB-A8-Tjp" eventType="touchUpInside" id="5sR-MB-Lpe"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6K-OV-9le">
                                                 <rect key="frame" x="187.5" y="0.0" width="167.5" height="30"/>
@@ -324,13 +330,20 @@
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="cancelButtonPressed:" destination="DzB-A8-Tjp" eventType="touchUpInside" id="cLw-HC-K6O"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G65-Uc-9DW">
                                         <rect key="frame" x="0.0" y="549" width="355" height="44"/>
                                         <items>
-                                            <barButtonItem systemItem="camera" id="KHe-EH-15p"/>
+                                            <barButtonItem systemItem="camera" id="KHe-EH-15p">
+                                                <connections>
+                                                    <action selector="takePicture:" destination="DzB-A8-Tjp" id="z9S-DZ-imj"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </items>
                                     </toolbar>
                                 </subviews>
@@ -345,6 +358,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vyl-5I-0qz"/>
                     </view>
+                    <connections>
+                        <outlet property="assignmentTextField" destination="Zhu-WK-8ZK" id="DOy-Ox-mXb"/>
+                        <outlet property="dueDateTextField" destination="vVu-bU-clo" id="lhu-Cr-ewD"/>
+                        <outlet property="imageView" destination="rg3-Pa-YOQ" id="wRK-z0-wGg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAx-73-MXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

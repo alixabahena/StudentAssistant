@@ -13,10 +13,10 @@ class Assignment: NSObject {
     var date: NSDate
     var itemKey: String
     
-    init(name: String, date: NSDate, itemKey: String) {
+    init(name: String, date: NSDate) {
         self.name = name
         self.date = date
-        self.itemKey = itemKey
+        self.itemKey = NSUUID().uuidString
         super.init()
     }
 }

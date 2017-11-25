@@ -14,7 +14,7 @@ class CourseViewController: UITableViewController{
     var courseStore: CourseStore!
     var course: Course!{
         didSet{
-            navigationItem.title = course.name
+            navigationItem.title = course.courseNum
         }
     }
 }

@@ -13,6 +13,7 @@
 		41DF3C5D1FBCD8F100D86858 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41DF3C5B1FBCD8F100D86858 /* LaunchScreen.storyboard */; };
 		41DF3C681FBCD8F100D86858 /* StudentAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF3C671FBCD8F100D86858 /* StudentAssistantTests.swift */; };
 		41DF3C731FBCD8F100D86858 /* StudentAssistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF3C721FBCD8F100D86858 /* StudentAssistantUITests.swift */; };
+		5555A0AE1FC9B38A00F59A98 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555A0AD1FC9B38A00F59A98 /* ImageStore.swift */; };
 		55BBB3881FBF62DC00841000 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBB3871FBF62DC00841000 /* Course.swift */; };
 		55BBB38A1FBF648900841000 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBB3891FBF648900841000 /* Assignment.swift */; };
 		55BBB38C1FBF65C700841000 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBB38B1FBF65C700841000 /* CourseViewController.swift */; };
@@ -53,6 +54,7 @@
 		41DF3C6E1FBCD8F100D86858 /* StudentAssistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudentAssistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DF3C721FBCD8F100D86858 /* StudentAssistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAssistantUITests.swift; sourceTree = "<group>"; };
 		41DF3C741FBCD8F100D86858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5555A0AD1FC9B38A00F59A98 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		55BBB3871FBF62DC00841000 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		55BBB3891FBF648900841000 /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		55BBB38B1FBF65C700841000 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				55BBB3931FBF673900841000 /* AddAssignmentViewController.swift */,
 				55BBB3951FC1D01E00841000 /* ItemCell.swift */,
 				55BBB3971FC1D34900841000 /* CourseStore.swift */,
+				5555A0AD1FC9B38A00F59A98 /* ImageStore.swift */,
 			);
 			path = StudentAssistant;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				55BBB3981FC1D34900841000 /* CourseStore.swift in Sources */,
 				55BBB3961FC1D01E00841000 /* ItemCell.swift in Sources */,
 				55BBB38A1FBF648900841000 /* Assignment.swift in Sources */,
+				5555A0AE1FC9B38A00F59A98 /* ImageStore.swift in Sources */,
 				55BBB3921FBF670A00841000 /* AddCourseViewController.swift in Sources */,
 				55BBB3901FBF663300841000 /* CourseListViewController.swift in Sources */,
 				55BBB38C1FBF65C700841000 /* CourseViewController.swift in Sources */,

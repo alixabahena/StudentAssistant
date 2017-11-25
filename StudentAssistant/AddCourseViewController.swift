@@ -33,10 +33,6 @@ class AddCourseViewController: UIViewController, UITextFieldDelegate, UINavigati
        let newCourse = Course(name: courseName, courseNum: courseNum, date: courseDate)
        courseStore.allCourses.append(newCourse)
         
-        //course.name = courseName
-        //course.courseNum = courseNum
-        //course.date = courseDate
-        
         courseNumTextField.text = ""
         courseNameTextField.text = ""
         courseDateTextField.text = ""
