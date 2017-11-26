@@ -74,7 +74,6 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-       
         if senderID == 2 {
             addButton.isHidden = true
             cancelButton.isHidden = true
@@ -82,9 +81,7 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
             assignmentTextField.text = course.assignmentArray[localRow].name
             dueDateTextField.text = dateFormatter.string(from: course.assignmentArray[localRow].date)
             
-            
-            
-            
+
         let key = course.assignmentArray[localRow].pictureKey
         
         // If there is an associated image with the item ...
@@ -92,6 +89,22 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
             // ... display it on the image view
             imageView.image = imageToDisplay
         }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        //save any changes that they make, only if they are in "editing mode" detected by sender ID 2
+        if senderID == 2 {
+            course.assignmentArray[localRow].name = assignmentTextField.text ?? ""
+            if (datePicker != nil){
+            course.assignmentArray[localRow].date = (datePicker.date)
+            }
+            else
+            {
+                course.assignmentArray[localRow].date = course.assignmentArray[localRow].date
+            }
         }
     }
     

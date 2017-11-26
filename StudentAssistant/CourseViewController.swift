@@ -11,6 +11,8 @@ import UIKit
 
 class CourseViewController: UITableViewController{
     
+    
+    @IBOutlet var editBarButton: UIBarButtonItem!
     var courseStore: CourseStore!
     var imageStore: ImageStore!
     var course: Course!{
@@ -74,7 +76,53 @@ class CourseViewController: UITableViewController{
         tableView.reloadData()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.rightBarButtonItem = editButtonItem
+        
+    }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        // If the table view is asking to commit a delete command...
+        if editingStyle == .delete {
+            let assignmentIndex = indexPath.row;
+            let assignment = course.assignmentArray[assignmentIndex]
+            
+            //Step-a. Create an alert
+            let title = "Delete \(assignment.name)?"
+            let message = "Are you sure you want to delete this item?"
+            
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            
+            //Step-b. Add actions
+            //a. cancel button
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil); ac.addAction(cancelAction)
+            
+            //b. delete button
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {
+                (action) -> Void in
+                // Remove the item from the store
+                self.course.assignmentArray.remove(at: assignmentIndex)
+                self.imageStore.deleteImage(forKey: self.course.assignmentArray[assignmentIndex].pictureKey)
+                // Also remove that row from the table view with an animation
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.reloadData()
+            })
+            ac.addAction(deleteAction)
+            
+            //c. Present the alert controller
+            present(ac, animated: true, completion: nil)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            moveRowAt sourceIndexPath: IndexPath,
+                            to destinationIndexPath: IndexPath) {
+        // Update the model
+        tableView.reloadData()
+        //updating the model so that the items stay in index order
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "addAssignmentSegue") {

@@ -61,6 +61,55 @@ class CourseListViewController: UITableViewController{
         tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView,
+                            moveRowAt sourceIndexPath: IndexPath,
+                            to destinationIndexPath: IndexPath) {
+        // Update the model
+        courseStore.moveCourse(from: sourceIndexPath.row, to: destinationIndexPath.row)
+        tableView.reloadData()
+        //updating the model so that the items stay in index order
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        // If the table view is asking to commit a delete command...
+        if editingStyle == .delete {
+            let courseIndex = indexPath.row;
+            let course = courseStore.allCourses[courseIndex]
+            
+            //Step-a. Create an alert
+            let title = "Delete \(course.name)?"
+            let message = "Are you sure you want to delete this item?"
+            
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            
+            //Step-b. Add actions
+            //a. cancel button
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil); ac.addAction(cancelAction)
+            
+            //b. delete button
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {
+                (action) -> Void in
+                // Remove the item from the store
+                self.courseStore.removeCourse(course)
+               // self.imageStore.deleteImage(forKey: course.itemKey)
+                // Also remove that row from the table view with an animation
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.reloadData()
+            })
+            ac.addAction(deleteAction)
+            
+            //c. Present the alert controller
+            present(ac, animated: true, completion: nil)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "AddCourse")
         {

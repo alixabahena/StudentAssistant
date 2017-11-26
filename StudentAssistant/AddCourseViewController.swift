@@ -45,10 +45,6 @@ class AddCourseViewController: UIViewController, UITextFieldDelegate, UINavigati
        
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
     
 }

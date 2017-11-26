@@ -27,13 +27,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Course Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqX-3w-BrX">
-                                            <rect key="frame" x="8" y="11.5" width="121" height="21"/>
+                                            <rect key="frame" x="19" y="12" width="121" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prq-aw-WjY">
-                                            <rect key="frame" x="137" y="11.5" width="102" height="21"/>
+                                            <rect key="frame" x="251.5" y="11" width="104.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -41,10 +41,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="prq-aw-WjY" firstAttribute="centerY" secondItem="UgT-PD-CzK" secondAttribute="centerY" id="2I9-tk-Xlt"/>
-                                        <constraint firstItem="prq-aw-WjY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DqX-3w-BrX" secondAttribute="trailing" constant="8" symbolic="YES" id="L6T-2H-lIK"/>
                                         <constraint firstItem="DqX-3w-BrX" firstAttribute="centerY" secondItem="UgT-PD-CzK" secondAttribute="centerY" id="PZw-hP-qsp"/>
-                                        <constraint firstAttribute="trailing" secondItem="prq-aw-WjY" secondAttribute="trailing" constant="136" id="Yd1-2G-yTF"/>
-                                        <constraint firstItem="DqX-3w-BrX" firstAttribute="leading" secondItem="UgT-PD-CzK" secondAttribute="leading" constant="8" id="yE3-2C-FOQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="prq-aw-WjY" secondAttribute="trailing" constant="19" id="bur-xx-Wcb"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DqX-3w-BrX" secondAttribute="trailing" constant="20" symbolic="YES" id="lel-hl-7sn"/>
+                                        <constraint firstItem="prq-aw-WjY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UgT-PD-CzK" secondAttribute="leading" constant="20" symbolic="YES" id="utA-cr-OGQ"/>
+                                        <constraint firstItem="DqX-3w-BrX" firstAttribute="leading" secondItem="UgT-PD-CzK" secondAttribute="leading" constant="19" id="yE3-2C-FOQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="ItemCell"/>
@@ -71,7 +72,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WLo-aS-u57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="38"/>
+            <point key="canvasLocation" x="1213.5999999999999" y="37.331334332833585"/>
         </scene>
         <!--Class Name-->
         <scene sceneID="cOh-fe-ZOB">
@@ -90,13 +91,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Assignment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnO-Ko-hm3">
-                                            <rect key="frame" x="8" y="11.5" width="91" height="21"/>
+                                            <rect key="frame" x="19" y="11.5" width="91" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B4-mP-HEX">
-                                            <rect key="frame" x="121" y="11.5" width="72" height="21"/>
+                                            <rect key="frame" x="284" y="11" width="72" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -104,11 +105,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="KnO-Ko-hm3" firstAttribute="centerY" secondItem="lYQ-H7-h3r" secondAttribute="centerY" id="7s1-xK-TZD"/>
-                                        <constraint firstItem="6B4-mP-HEX" firstAttribute="leading" secondItem="KnO-Ko-hm3" secondAttribute="trailing" constant="22" id="NXs-E9-TdY"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6B4-mP-HEX" secondAttribute="trailing" constant="20" symbolic="YES" id="Pr3-W3-oHX"/>
-                                        <constraint firstItem="6B4-mP-HEX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KnO-Ko-hm3" secondAttribute="trailing" constant="8" symbolic="YES" id="cNR-3U-rWe"/>
+                                        <constraint firstItem="6B4-mP-HEX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lYQ-H7-h3r" secondAttribute="leading" constant="20" symbolic="YES" id="J6c-EE-uN9"/>
+                                        <constraint firstAttribute="trailing" secondItem="6B4-mP-HEX" secondAttribute="trailing" constant="19" id="WYP-DY-OjT"/>
                                         <constraint firstItem="6B4-mP-HEX" firstAttribute="centerY" secondItem="lYQ-H7-h3r" secondAttribute="centerY" id="dhA-Td-Gns"/>
-                                        <constraint firstItem="KnO-Ko-hm3" firstAttribute="leading" secondItem="lYQ-H7-h3r" secondAttribute="leading" constant="8" id="gNF-fj-dUf"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KnO-Ko-hm3" secondAttribute="trailing" constant="20" symbolic="YES" id="fzG-sg-0qb"/>
+                                        <constraint firstItem="KnO-Ko-hm3" firstAttribute="leading" secondItem="lYQ-H7-h3r" secondAttribute="leading" constant="19" id="gNF-fj-dUf"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -125,14 +126,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Course Name" id="qbG-mr-QL5">
                         <rightBarButtonItems>
+                            <barButtonItem springLoaded="YES" systemItem="edit" id="eIP-TC-xif"/>
                             <barButtonItem systemItem="add" id="EeM-hV-str">
                                 <connections>
                                     <segue destination="DzB-A8-Tjp" kind="show" identifier="addAssignmentSegue" id="OCy-4C-FJt"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="edit" id="eIP-TC-xif"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="editBarButton" destination="eIP-TC-xif" id="dNh-Fq-1FY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZp-hD-23g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
