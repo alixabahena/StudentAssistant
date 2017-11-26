@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
@@ -60,7 +61,11 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         //must reset the values of these to nothing so that the next addition doesn't carry them
         
         imageView.image = nil
+        
+        //create notifications
+        
         self.navigationController?.popViewController(animated: true)
+    
 
         
     }

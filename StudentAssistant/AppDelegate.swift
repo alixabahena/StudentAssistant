@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let courseListController = navController.topViewController as! CourseListViewController
         courseListController.courseStore = courseStore
         courseListController.imageStore = imageStore
+        
+        //notifications setup
+        let center = UNUserNotificationCenter.current()
+        let options: UNAuthorizationOptions = [.alert, .sound]
+        
+        center.requestAuthorization(options: options) {
+            (granted, error) in
+            if !granted {
+                print("Something went wrong")
+            }
+        }
+        
         return true
     }
 
