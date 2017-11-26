@@ -62,12 +62,32 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         
         imageView.image = nil
         
-        //create notifications
+        //prepare for notifications
+        let center = UNUserNotificationCenter.current()
         
-        self.navigationController?.popViewController(animated: true)
-    
+        //6 hour trigger content
+        var content = UNMutableNotificationContent()
+        content.title = assignmentName
+        content.body = "Due in 6 hours!"
+        content.sound = UNNotificationSound.default()
+        
+        //format the date for the trigger
+        let triggerDate6 = datePicker.date.addingTimeInterval(-21600)
+        let triggerDate6Components = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: triggerDate6)
+        let trigger6 = UNCalendarNotificationTrigger(dateMatching: triggerDate6Components, repeats: false)
 
+        //finally craft and set up the notification
+        let identifier = "UYLLocalNotification"
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger6)
+        center.add(request, withCompletionHandler: { (error) in
+            if error != nil {
+                // Something went wrong
+            }
+        })
         
+        //now that notifications are done, close out of the segue finally
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
