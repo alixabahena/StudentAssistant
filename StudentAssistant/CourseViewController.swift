@@ -44,10 +44,10 @@ class CourseViewController: UITableViewController{
         //cell.detailTextLabel?.text = "$\(item.valueInDollars)"
         cell.assignmentLabel.text = item.name
         
-        let formatter = DateFormatter()
+       // let formatter = DateFormatter()
         // initially set the format based on your datepicker date
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let localDate = formatter.string(from: item.date)
+        
+        let localDate = DateFormatter.localizedString(from: item.date, dateStyle: .short, timeStyle: .short)
         cell.assignmentDueDateLabel.text = localDate
       
         

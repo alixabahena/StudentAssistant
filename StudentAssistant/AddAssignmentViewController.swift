@@ -147,8 +147,7 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
             cancelButton.isHidden = true
             
             assignmentTextField.text = course.assignmentArray[localRow].name
-            dueDateTextField.text = dateFormatter.string(from: course.assignmentArray[localRow].date)
-            
+            dueDateTextField.text = DateFormatter.localizedString(from: course.assignmentArray[localRow].date, dateStyle: .short, timeStyle: .short)
 
         let key = course.assignmentArray[localRow].pictureKey
         
@@ -166,6 +165,9 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         //save any changes that they make, only if they are in "editing mode" detected by sender ID 2
         if senderID == 2 {
             course.assignmentArray[localRow].name = assignmentTextField.text ?? ""
+            if imageView.image != nil {
+                imageStore.setImage(imageView.image!, forKey: course.assignmentArray[localRow].pictureKey)
+                       }
             if (datePicker != nil){
             course.assignmentArray[localRow].date = (datePicker.date)
             }
@@ -206,9 +208,9 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         
         // Store the image in the ImageStore for the item's key
         
-        //if course.assignmentArray.count != 0 {
-        //imageStore.setImage(image, forKey: course.assignmentArray[localRow].pictureKey)
-       // }
+//        if course.assignmentArray.count != 0 {
+//        imageStore.setImage(image, forKey: course.assignmentArray[localRow].pictureKey)
+//       }
         // Put that image onto the screen in our image view
         imageView.image = image
         

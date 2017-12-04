@@ -90,8 +90,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Assignment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnO-Ko-hm3">
-                                            <rect key="frame" x="19" y="11.5" width="91" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Assignment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnO-Ko-hm3">
+                                            <rect key="frame" x="19" y="11.5" width="265" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -105,10 +105,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="KnO-Ko-hm3" firstAttribute="centerY" secondItem="lYQ-H7-h3r" secondAttribute="centerY" id="7s1-xK-TZD"/>
-                                        <constraint firstItem="6B4-mP-HEX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lYQ-H7-h3r" secondAttribute="leading" constant="20" symbolic="YES" id="J6c-EE-uN9"/>
+                                        <constraint firstItem="6B4-mP-HEX" firstAttribute="leading" secondItem="KnO-Ko-hm3" secondAttribute="trailing" id="8EQ-Ds-EPf"/>
                                         <constraint firstAttribute="trailing" secondItem="6B4-mP-HEX" secondAttribute="trailing" constant="19" id="WYP-DY-OjT"/>
                                         <constraint firstItem="6B4-mP-HEX" firstAttribute="centerY" secondItem="lYQ-H7-h3r" secondAttribute="centerY" id="dhA-Td-Gns"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KnO-Ko-hm3" secondAttribute="trailing" constant="20" symbolic="YES" id="fzG-sg-0qb"/>
                                         <constraint firstItem="KnO-Ko-hm3" firstAttribute="leading" secondItem="lYQ-H7-h3r" secondAttribute="leading" constant="19" id="gNF-fj-dUf"/>
                                     </constraints>
                                 </tableViewCellContentView>
