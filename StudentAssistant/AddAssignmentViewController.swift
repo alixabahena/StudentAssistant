@@ -51,7 +51,7 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         let newAssignment = Assignment(name: assignmentName, date: dueDate)
         course.assignmentArray.append(newAssignment)
         
-        //if there is an image for the current assignment, show it
+        //if there is an image for the current assignment
         if imageView.image != nil {
             imageStore.setImage(imageView.image!, forKey: course.assignmentArray[localRow].pictureKey)
         }
@@ -66,21 +66,64 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         let center = UNUserNotificationCenter.current()
         
         //6 hour trigger content
-        var content = UNMutableNotificationContent()
-        content.title = assignmentName
-        content.body = "Due in 6 hours!"
-        content.sound = UNNotificationSound.default()
+        let content6 = UNMutableNotificationContent()
+        content6.title = assignmentName
+        content6.body = "Due in 6 hours!"
+        content6.sound = UNNotificationSound.default()
         
-        //format the date for the trigger
+        //12 hour trigger content
+        let content12 = UNMutableNotificationContent()
+        content12.title = assignmentName
+        content12.body = "Due in 12 hours!"
+        content12.sound = UNNotificationSound.default()
+        
+        //24 hour trigger content
+        let content24 = UNMutableNotificationContent()
+        content24.title = assignmentName
+        content24.body = "Due in 24 hours!"
+        content24.sound = UNNotificationSound.default()
+        
+        //format the date for the trigger - 6 hr
         let triggerDate6 = datePicker.date.addingTimeInterval(-21600)
         let triggerDate6Components = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: triggerDate6)
         let trigger6 = UNCalendarNotificationTrigger(dateMatching: triggerDate6Components, repeats: false)
 
-        //finally craft and set up the notification
-        let identifier = "UYLLocalNotification"
-        let request = UNNotificationRequest(identifier: identifier,
-                                            content: content, trigger: trigger6)
-        center.add(request, withCompletionHandler: { (error) in
+        //format the date for the trigger - 12 hr
+        let triggerDate12 = datePicker.date.addingTimeInterval(-43200)
+        let triggerDate12Components = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: triggerDate12)
+        let trigger12 = UNCalendarNotificationTrigger(dateMatching: triggerDate12Components, repeats: false)
+
+        //format the date for the trigger - 24 hr
+        let triggerDate24 = datePicker.date.addingTimeInterval(-86400)
+        let triggerDate24Components = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: triggerDate24)
+        let trigger24 = UNCalendarNotificationTrigger(dateMatching: triggerDate24Components, repeats: false)
+
+        
+        //finally craft and set up the notification - 6 hr
+        let identifier6 = "UYLLocalNotification6hr"
+        let request6 = UNNotificationRequest(identifier: identifier6,
+                                            content: content6, trigger: trigger6)
+        center.add(request6, withCompletionHandler: { (error) in
+            if error != nil {
+                // Something went wrong
+            }
+        })
+        
+        //finally craft and set up the notification - 12 hr
+        let identifier12 = "UYLLocalNotification12hr"
+        let request12 = UNNotificationRequest(identifier: identifier12,
+                                             content: content12, trigger: trigger12)
+        center.add(request12, withCompletionHandler: { (error) in
+            if error != nil {
+                // Something went wrong
+            }
+        })
+        
+        //finally craft and set up the notification - 24 hr
+        let identifier24 = "UYLLocalNotification24hr"
+        let request24 = UNNotificationRequest(identifier: identifier24,
+                                             content: content24, trigger: trigger24)
+        center.add(request24, withCompletionHandler: { (error) in
             if error != nil {
                 // Something went wrong
             }
@@ -163,9 +206,9 @@ class AddAssignmentViewController: UIViewController, UITextFieldDelegate, UIImag
         
         // Store the image in the ImageStore for the item's key
         
-        if course.assignmentArray.count != 0 {
-        imageStore.setImage(image, forKey: course.assignmentArray[localRow].pictureKey)
-        }
+        //if course.assignmentArray.count != 0 {
+        //imageStore.setImage(image, forKey: course.assignmentArray[localRow].pictureKey)
+       // }
         // Put that image onto the screen in our image view
         imageView.image = image
         

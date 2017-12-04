@@ -11,9 +11,21 @@ import Foundation
 class CourseStore {
     
     var allCourses = [Course]()
+    let courseArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        
+        return documentDirectory.appendingPathComponent("courses.archive")
+        
+    }()
 
-
- 
+    init(){
+        if let archivedItems =
+            NSKeyedUnarchiver.unarchiveObject(withFile: courseArchiveURL.path) as? [Course] {
+            allCourses = archivedItems
+        }
+    }
+    
     func removeCourse(_ item: Course) {
         if let index = allCourses.index(of: item) {
             allCourses.remove(at: index)
@@ -33,4 +45,10 @@ class CourseStore {
         // Insert item in array at new location
         allCourses.insert(movedCourse, at: toIndex)
     }
+    
+    func saveChanges() -> Bool {
+        print("Saving items to: \(courseArchiveURL.path)")
+        return NSKeyedArchiver.archiveRootObject(allCourses, toFile: courseArchiveURL.path)
+    }
+
 }

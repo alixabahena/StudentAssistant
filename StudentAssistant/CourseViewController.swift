@@ -134,9 +134,8 @@ class CourseViewController: UITableViewController{
                 newVC.course = course
                 newVC.courseStore = courseStore
                 newVC.imageStore = imageStore
-            if let row = tableView.indexPathForSelectedRow?.row {
-               newVC.localRow = row
-            }
+                newVC.localRow = course.assignmentArray.endIndex
+            
     }
         
         if (segue.identifier == "editAssignment") {
